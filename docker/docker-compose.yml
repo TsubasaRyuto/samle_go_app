@@ -10,6 +10,8 @@ services:
       POSTGRES_USER: app_user
       POSTGRES_PASSWORD: password
       POSTGRES_DB: sample_app
+    ports:
+      - '5432:5432'
 
   app:
     container_name: app
