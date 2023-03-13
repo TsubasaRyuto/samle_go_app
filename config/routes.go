@@ -16,7 +16,8 @@ func ServerStart() {
 func userRoutes(router *gin.RouterGroup) {
 
   router.GET("", controllers.GetUsers)
-  // router.POST("/users", usersController.Create)
+  router.GET("/:userid", controllers.GetUser)
+  router.POST("", controllers.CreateUser)
   // router.PUT("/users/:id", usersController.Update)
   // router.DELETE("/users/:id", usersController.Update)
 }

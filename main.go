@@ -5,6 +5,7 @@ import (
   // "github.com/gin-gonic/gin"
   "log"
   "github.com/TsubasaRyuto/go_sample_app/config"
+  "github.com/TsubasaRyuto/go_sample_app/database"
 
   // "fmt"
   // "gorm.io/gorm"
@@ -17,6 +18,7 @@ import (
 // }
 
 func main() {
+  database.Migrate()
   log.Println("start server ...")
 
   log.Println(config.Config.Port)
@@ -39,6 +41,6 @@ func main() {
   // var test Test
   // db.First(&test, 2)
 
-  config.ServerStart()
 
+  config.ServerStart()
 }

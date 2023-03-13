@@ -23,7 +23,7 @@ func CreateUser(name string, email string, passwordHash string) {
   db.Create(&User{Name: name, Email: email, PasswordHash: passwordHash})
 }
 
-func GetUserById(id int) {
+func GetUserById(id int) User {
   dsn := "host=db user=app_user password=password dbname=sample_app port=5432 sslmode=disable TimeZone=Asia/Tokyo"
   db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
@@ -33,4 +33,5 @@ func GetUserById(id int) {
 
   var user User
   db.First(&user, id)
+  return user
 }
