@@ -8,9 +8,9 @@ import (
 )
 
 func GetUsers(c *gin.Context) {
+  users := models.GetAllUsers()
   c.JSON(http.StatusOK, gin.H{
-    "name": "TsubasaRyuto",
-    "email": "tsubasa.ryuto@gmail.com",
+    "list": users,
   });
 }
 
