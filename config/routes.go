@@ -22,10 +22,15 @@ func userRoutes(router *gin.RouterGroup) {
   // router.DELETE("/users/:id", usersController.Update)
 }
 
+func sessionRouters(router *gin.RouterGroup) {
+  router.POST("/login", controllers.Login)
+}
+
 func RegisterRoutes(router *gin.Engine) {
   apiRoutes := router.Group("/api")
   {
     userRoutes(apiRoutes.Group("/users"))
+    sessionRouters(apiRoutes.Group(""))
   }
 }
 
