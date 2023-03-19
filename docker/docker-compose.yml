@@ -12,6 +12,8 @@ services:
       POSTGRES_DB: sample_app
     ports:
       - '5432:5432'
+    networks:
+      - my-network
 
   app:
     container_name: app
@@ -25,3 +27,8 @@ services:
       - "8080:8080"
     depends_on:
       - db
+    networks:
+      - my-network
+
+networks:
+  my-network:
